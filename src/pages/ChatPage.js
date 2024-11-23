@@ -7,7 +7,7 @@ const ChatPage = () => {
     { sender: 'bot', text: 'Hello, Danilo! What are we going to talk about today?' },
   ]);
   const [input, setInput] = useState('');
-  const messagesEndRef = useRef(null);//
+  const messagesEndRef = useRef(null);
 
   const sendMessage = async () => {
     if (input.trim() === '') return;
@@ -17,9 +17,9 @@ const ChatPage = () => {
     setInput('');
 
     try {
-      const response = await axios.post('https://0c77-2804-431-cff2-24c9-e013-c87d-43e6-c5d.ngrok-free.app/chat', {
-        message: input,
-        user_id: 'user123', // Adjust as needed
+      const response = await axios.post('https://d595-2804-431-cff2-24c9-39ff-50a-4c2c-1d6b.ngrok-free.app/chat', {
+        user_id: 'user123', // Ajuste conforme necessário
+        message: input // Usa a mensagem digitada pelo usuário
       });
 
       const botMessage = { sender: 'bot', text: response.data.reply };
@@ -28,7 +28,7 @@ const ChatPage = () => {
       console.error(error);
       const errorMessage = {
         sender: 'bot',
-        text: 'Sorry, there was an error processing your request.',
+        text: 'Desculpe, houve um erro ao processar sua solicitação.',
       };
       setMessages((prevMessages) => [...prevMessages, errorMessage]);
     }
@@ -48,7 +48,7 @@ const ChatPage = () => {
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
         <h1 className="text-2xl font-bold text-gray-800">ChatLearn</h1>
-        {/* Add any header elements here */}
+        {/* Adicione quaisquer elementos de cabeçalho aqui */}
       </header>
 
       {/* Chat Box */}
