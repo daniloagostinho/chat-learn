@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaRobot, FaComments, FaMobileAlt } from 'react-icons/fa';
 
-const LandingPage: React.FC = () => {
+const LandingPage = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-purple-500 to-indigo-600 text-white font-poppins overflow-hidden">
       {/* Animated Background */}
@@ -9,9 +9,23 @@ const LandingPage: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full">
           {/* Chat bubble animations */}
           <div className="bubble-container">
-            {[...Array(20)].map((_, i) => (
-              <div key={i} className="bubble"></div>
-            ))}
+            {[...Array(50)].map((_, i) => {
+              const scale = Math.random() * 0.8 + 0.2; // Random scale between 0.2 and 1.0
+              const duration = Math.random() * 10 + 10; // Duration between 10s and 20s
+              const hue = Math.floor(Math.random() * 360); // Random hue between 0 and 359
+              return (
+                <div
+                  key={i}
+                  className="bubble"
+                  style={{
+                    '--i': i + 1,
+                    '--scale': scale,
+                    '--animation-duration': `${duration}s`,
+                    '--hue': hue,
+                  }}
+                ></div>
+              );
+            })}
           </div>
         </div>
       </div>
