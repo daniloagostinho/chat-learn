@@ -7,7 +7,7 @@ const ChatPage = () => {
     { sender: 'bot', text: 'Hello, Danilo! What are we going to talk about today?' },
   ]);
   const [input, setInput] = useState('');
-  const messagesEndRef = useRef(null);
+  const messagesEndRef = useRef(null);//
 
   const sendMessage = async () => {
     if (input.trim() === '') return;
