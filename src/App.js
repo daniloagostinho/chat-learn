@@ -15,7 +15,7 @@ function App() {
     setInput('');
 
     try {
-      const response = await axios.post('http://localhost:5000/chat', {
+      const response = await axios.post('https://b254-2804-431-cff2-24c9-e013-c87d-43e6-c5d.ngrok-free.app/chat', {
         message: input,
         user_id: 'user123', // You can generate or manage user IDs as needed
       });
